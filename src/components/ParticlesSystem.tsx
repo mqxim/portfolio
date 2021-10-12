@@ -1,7 +1,11 @@
 import * as React from "react";
 import Particles from "react-particles-js";
 
-const ParticlesSystem = (): JSX.Element => {
+const photo1 = require("../assets/img/1.png");
+
+const photo2 = require("../assets/img/2.png");
+
+export const ParticlesSystem = (): JSX.Element => {
   React.useEffect(() => {
     const item = document.getElementById("tsparticles");
     item.style.width = "100vw";
@@ -13,7 +17,7 @@ const ParticlesSystem = (): JSX.Element => {
       params={{
         particles: {
           number: {
-            value: 10,
+            value: 5,
             density: {
               enable: true,
               value_area: 800,
@@ -24,25 +28,20 @@ const ParticlesSystem = (): JSX.Element => {
           },
           move: {
             speed: 2,
-            out_mode: "out",
+            out_mode: "bounce",
           },
           shape: {
-            type: ["image", "circle"],
+            type: ["image"],
             image: [
               {
-                src: "https://seeklogo.com/images/R/react-logo-7B3CE81517-seeklogo.com.png",
-                height: 24,
-                width: 24,
+                src: photo1.default,
+                height: 2500,
+                width: 2500,
               },
               {
-                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/277px-Vue.js_Logo_2.svg.png",
-                height: 24,
-                width: 24,
-              },
-              {
-                src: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/240px-Angular_full_color_logo.svg.png",
-                height: 24,
-                width: 24,
+                src: photo2.default,
+                height: 2500,
+                width: 2500,
               },
             ],
           },
@@ -50,21 +49,85 @@ const ParticlesSystem = (): JSX.Element => {
             value: "#f1f1f1",
           },
           size: {
-            value: 30,
+            value: 70,
             random: false,
             anim: {
-              enable: true,
-              speed: 8,
+              enable: false,
+              speed: 5,
               size_min: 10,
               sync: false,
             },
           },
         },
-        retina_detect: false,
+        retina_detect: true,
       }}
       style={{ width: "100%", height: "100%" }}
     />
   );
 };
 
+// const ParticlesSystem = (): JSX.Element => {
+//   React.useEffect(() => {
+//     const item = document.getElementById("tsparticles");
+//     item.style.width = "100vw";
+//     item.style.height = "100vh";
+//   });
+//
+//   return (
+//     <Particles
+//       params={{
+//         particles: {
+//           number: {
+//             value: 300,
+//             density: {
+//               enable: false,
+//             },
+//           },
+//           size: {
+//             value: 3,
+//             random: true,
+//             anim: {
+//               speed: 4,
+//               size_min: 0.3,
+//             },
+//           },
+//           line_linked: {
+//             enable: false,
+//           },
+//           move: {
+//             random: true,
+//             speed: 1,
+//             direction: "top",
+//             out_mode: "out",
+//           },
+//         },
+//         interactivity: {
+//           events: {
+//             onhover: {
+//               enable: true,
+//               mode: "bubble",
+//             },
+//             onclick: {
+//               enable: true,
+//               mode: "repulse",
+//             },
+//           },
+//           modes: {
+//             bubble: {
+//               distance: 250,
+//               duration: 2,
+//               size: 0,
+//               opacity: 0,
+//             },
+//             repulse: {
+//               distance: 400,
+//               duration: 4,
+//             },
+//           },
+//         },
+//       }}
+//     />
+//   );
+// };
+//
 export default ParticlesSystem;
