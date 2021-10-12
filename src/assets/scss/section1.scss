@@ -1,0 +1,76 @@
+.about-me {
+  color: rgb(254, 15, 23);
+  text-align: center;
+  font-size: 5em;
+  background-color: #efefef;
+}
+
+.about-me-name {
+  margin: 0;
+  font-weight: bold;
+  font-size: 2em;
+  font-family: Impact, sans-serif;
+}
+
+.about-me-description {
+  font-size: 2rem;
+  font-weight: 100;
+  text-align: right;
+  margin: 0;
+  font-family: "Times New Roman", fantasy;
+}
+
+.my-photo {
+  z-index: 2147483647;
+
+  height: 100vh;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: auto;
+    height: 90%;
+    border-radius: 8px;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .my-photo {
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .about-me-name {
+    padding-right: 20px;
+    width: 100vw;
+    font-size: 1em;
+    text-align: right;
+    margin-bottom: 20px;
+  }
+
+  .about-me-description {
+    width: 100vw;
+    padding-right: 20px;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .my-photo {
+    overflow: hidden;
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+
+  .descr {
+    align-self: flex-end;
+    padding-bottom: 1em;
+  }
+}
