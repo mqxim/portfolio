@@ -1,7 +1,7 @@
 import * as React from "react";
 import ParticlesSystem from "./ParticlesSystem";
-import { Button } from "@mui/material";
-import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import { Button } from "@material-ui/core";
+import KeyboardArrowDownIcon from "@material-ui/icons/KeyboardArrowDown";
 
 const photo = require("../../assets/img/my_photo.jpg");
 
@@ -32,7 +32,7 @@ const Section1 = ({ onScroll }: Section1Props): JSX.Element => {
             <h2 className="about-me-name">Максим Ильин</h2>
             <h3 className="about-me-description">Личное портфолио</h3>
             <Button
-              style={{ backgroundColor: "rgb(254, 15, 23)" }}
+              style={{ backgroundColor: "rgb(254, 15, 23)", color: "#fff" }}
               variant="contained"
               disableElevation
               onClick={() => onScroll()}
