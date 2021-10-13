@@ -4,6 +4,7 @@ import { hot } from "react-hot-loader";
 import ReactFullPage from "@fullpage/react-fullpage";
 import Section1 from "./section-one/Section1";
 import Section2 from "./section-two/Section2";
+import Section3 from "./section-three/Section3";
 
 import "./../assets/scss/App.scss";
 
@@ -20,7 +21,12 @@ const FullPage = () => (
           <div className="section">
             <Section2 />
           </div>
-          <div className="section">s3</div>
+          <div className="section">
+            <Section3 />
+          </div>
+          <div className="section">
+            <Section3 />
+          </div>
         </ReactFullPage.Wrapper>
       );
     }}
