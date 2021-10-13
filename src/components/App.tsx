@@ -6,12 +6,17 @@ import Section1 from "./section-one/Section1";
 import Section2 from "./section-two/Section2";
 import Section3 from "./section-three/Section3";
 
+import Section4 from "./section-four/Section4";
+import Section5 from "./section-five/Section5";
+import Section6 from "./section-six/Section6";
+
 import "./../assets/scss/App.scss";
 
 const FullPage = () => (
   <ReactFullPage
     licenseKey={"YOUR_KEY_HERE"}
     scrollingSpeed={1000}
+    scolrrHorizontally={false}
     scrollVertically={false}
     scrollHorizontallyKey={"YOUR KEY HERE"}
     render={({ state, fullpageApi }) => {
@@ -25,7 +30,13 @@ const FullPage = () => (
             <Section3 />
           </div>
           <div className="section">
-            <Section3 />
+            <Section4 />
+          </div>
+          <div className="section">
+            <Section5 />
+          </div>
+          <div className="section">
+            <Section6 />
           </div>
         </ReactFullPage.Wrapper>
       );

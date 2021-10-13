@@ -6,7 +6,7 @@ const Section3 = (): JSX.Element => {
   return (
     <React.Fragment>
       <div className="section-three">
-        <h2 style={{ color: "#42b983" }}>Мои проекты</h2>
+        <h2 style={{ color: "#fff" }}>Мои проекты</h2>
       </div>
     </React.Fragment>
   );

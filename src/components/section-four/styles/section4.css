@@ -1,0 +1,27 @@
+.section-four {
+    width: 100vw;
+    height: 100vh;
+    font-size: 5em;
+    font-family: arial, helvetica, sans-serif;
+    background-color: #fff;
+}
+
+.s4-heading {
+    color: #42b983;
+    font-size: 1em;
+    margin: 0;
+    padding: 16px;
+}
+
+.s4-project-container {
+    height: 70%;
+    flex: 1;
+    margin: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+@media screen and (max-width: 930px) {
+    .s4-heading {
+        font-size: 0.5em;
+    }
+}

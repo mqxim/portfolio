@@ -19,7 +19,7 @@ const Section2 = (): JSX.Element => {
         <div style={{ display: "block" }}>
           <Grid container p={2} spacing={2} alignItems="stretch">
             <Grid item xs={12}>
-              <h1 className="s2-about-me">Обо мне</h1>
+              <h2 className="s2-about-me">Обо мне</h2>
             </Grid>
             <Grid item md={4} sm={6} xs={12}>
               <Card style={{ height: "100%" }}>
