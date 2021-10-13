@@ -11,7 +11,7 @@ const FullPage = () => (
   <ReactFullPage
     licenseKey={"YOUR_KEY_HERE"}
     scrollingSpeed={1000}
-    scrollHorizontally={true} /* Because we are using the extension */
+    scrollVertically={false}
     scrollHorizontallyKey={"YOUR KEY HERE"}
     render={({ state, fullpageApi }) => {
       return (
@@ -20,6 +20,7 @@ const FullPage = () => (
           <div className="section">
             <Section2 />
           </div>
+          <div className="section">s3</div>
         </ReactFullPage.Wrapper>
       );
     }}
