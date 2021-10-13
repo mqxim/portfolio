@@ -11,6 +11,7 @@ import Section5 from "./section-five/Section5";
 import Section6 from "./section-six/Section6";
 
 import "./../assets/scss/App.scss";
+import Section7 from "./section-seven/Section7";
 
 const FullPage = () => (
   <ReactFullPage
@@ -37,6 +38,9 @@ const FullPage = () => (
           </div>
           <div className="section">
             <Section6 />
+          </div>
+          <div className="section">
+            <Section7 />
           </div>
         </ReactFullPage.Wrapper>
       );

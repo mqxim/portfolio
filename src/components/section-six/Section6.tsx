@@ -11,7 +11,12 @@ const Section6 = (): JSX.Element => {
           <h2 className="s6-heading">Учет доходов и расходов</h2>
           <div className="s6-project-container">
             <iframe
-              style={{ width: "100%", height: "100%", border: "none" }}
+              style={{
+                width: "100%",
+                height: "100%",
+                border: "none",
+                backgroundColor: "#fff",
+              }}
               src="https://mqxim.github.io/money-care/"
             />
           </div>
