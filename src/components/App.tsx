@@ -2,12 +2,10 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 
 import ReactFullPage from "@fullpage/react-fullpage";
-import Section1 from "./Section1";
-import Section2 from "./Section2";
+import Section1 from "./section-one/Section1";
+import Section2 from "./section-two/Section2";
 
 import "./../assets/scss/App.scss";
-
-const photo = require("../assets/img/background.svg");
 
 const FullPage = () => (
   <ReactFullPage
@@ -18,15 +16,7 @@ const FullPage = () => (
     render={({ state, fullpageApi }) => {
       return (
         <ReactFullPage.Wrapper>
-          <div
-            className="section about-me"
-            style={{
-              backgroundImage: `url(${photo.default})`,
-              backgroundSize: "100% 100%",
-            }}
-          >
-            <Section1 onScroll={() => fullpageApi.moveSectionDown()} />
-          </div>
+          <Section1 onScroll={() => fullpageApi.moveSectionDown()} />
           <div className="section">
             <Section2 />
           </div>

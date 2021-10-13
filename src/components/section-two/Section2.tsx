@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import "../assets/scss/section2.scss";
+import "../../assets/scss/section2.scss";
 
 const Section2 = (): JSX.Element => {
   return (
