@@ -12,7 +12,6 @@ const photo7 = require("./images/7.png");
 export const ParticlesSystem = (): JSX.Element => {
   React.useEffect(() => {
     const item = document.getElementById("tsparticles");
-    item.style.width = "100vw";
     item.style.height = "100vh";
   });
 
@@ -78,7 +77,7 @@ export const ParticlesSystem = (): JSX.Element => {
             value: "#f1f1f1",
           },
           size: {
-            value: 70,
+            value: 40,
             random: false,
             anim: {
               enable: false,

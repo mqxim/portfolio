@@ -13,50 +13,32 @@ import Section6 from "./section-six/Section6";
 import "./../assets/scss/App.scss";
 import Section7 from "./section-seven/Section7";
 
-const FullPage = () => (
-  <ReactFullPage
-    licenseKey={"YOUR_KEY_HERE"}
-    scrollingSpeed={1000}
-    scolrrHorizontally={false}
-    scrollVertically={false}
-    scrollHorizontallyKey={"YOUR KEY HERE"}
-    render={({ state, fullpageApi }) => {
-      return (
-        <ReactFullPage.Wrapper>
-          <Section1 onScroll={() => fullpageApi.moveSectionDown()} />
-          <div className="section">
-            <Section2 />
-          </div>
-          <div className="section">
-            <Section3 />
-          </div>
-          <div className="section">
-            <Section4 />
-          </div>
-          <div className="section">
-            <Section5 />
-          </div>
-          <div className="section">
-            <Section6 />
-          </div>
-          <div className="section">
-            <Section7 />
-          </div>
-        </ReactFullPage.Wrapper>
-      );
-    }}
-  />
-);
-
 class App extends React.Component<Record<string, unknown>, undefined> {
   public render() {
     return (
       <div className="app">
-        <div
-          className="particles"
-          style={{ width: "100vw", height: "100vh", position: "fixed" }}
-        >
-          <FullPage />
+        <div className="particles" style={{ width: "100vw", height: "100vh" }}>
+          <React.Fragment>
+            <Section1 />
+            <div className="section">
+              <Section2 />
+            </div>
+            <div className="section">
+              <Section3 />
+            </div>
+            <div className="section">
+              <Section4 />
+            </div>
+            <div className="section">
+              <Section5 />
+            </div>
+            <div className="section">
+              <Section6 />
+            </div>
+            <div className="section">
+              <Section7 />
+            </div>
+          </React.Fragment>
         </div>
       </div>
     );

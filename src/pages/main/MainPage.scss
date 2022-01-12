@@ -1,0 +1,94 @@
+.main-page {
+  display: flex;
+  flex-direction: column;
+  font-size: 4em;
+  width: 100%;
+  padding: 20px;
+
+  &-particle-system {
+    position: absolute;
+    height: 100vh;
+  }
+
+  &-text-container {
+    width: fit-content;
+    align-self: center;
+    z-index: 2;
+  }
+
+  &-my-name {
+    color: #000;
+    background-color: #fff;
+    font-size: 1.5em;
+    font-family: "Courier New", sans-serif;
+    text-align: right;
+    box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
+    margin: 0 0 25px 0;
+    border: 3px solid;
+    padding: 0.25em 0.25em;
+  }
+
+  &-buttons {
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+
+    &>div {
+      margin-left: 25px;
+      margin-bottom: 25px;
+      height: fit-content;
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  &-my-description {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: right;
+    margin: 0;
+    font-family: "Times New Roman", fantasy;
+  }
+
+  &-button {
+    font-family: "Courier New", sans-serif;
+    font-size: 22px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0 0, 2px 2px 0 0, 3px 3px 0 0, 4px 4px 0 0, 5px 5px 0 0;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+
+    &:active {
+      box-shadow: 0 0 0 0;
+      top: 5px;
+      left: 5px;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .main-page-button {
+    padding: 0.25em 0.75em;
+  }
+}
+
+@media screen and (max-width: 1080px) {
+  .main-page {
+    font-size: 3em;
+  }
+}
+
+@media screen and (max-width: 735px) {
+  .main-page {
+    font-size: 2em;
+  }
+}
