@@ -15,16 +15,6 @@ interface ProjectPageProps {
 class ProjectPage extends React.Component<ProjectPageProps, unknown> {
   constructor(props: ProjectPageProps) {
     super(props);
-
-    this.state = {
-      isLoading: true,
-    };
-  }
-
-  componentDidMount(): void {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 3000);
   }
 
   render(): JSX.Element {

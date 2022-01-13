@@ -17,27 +17,50 @@ import ProjectArticle from "./projects/ProjectArticle";
 const Projects: { id }[] = [Compiler, Slides, AJPerformance, MoneyCare];
 
 class App extends React.Component<Record<string, any>, unknown> {
+  componentDidUpdate() {
+    if (window.location.hash) {
+      console.log(window.location.hash);
+      document.querySelector(window.location.hash).scrollIntoView();
+    }
+  }
+
   render(): JSX.Element {
     const { history } = this.props;
 
     return (
       <React.Fragment>
         <Switch>
-          <Route path="/" exact>
-            <MainPage />
-            <ProjectPage
-              onViewProject={({ id }) => {
-                history.push(id);
-              }}
-            />
-            <ContactMe />
-          </Route>
           <Route path={"/" + Compiler.id}>
             <SectionContainer
               backgroundType={BackgroundType.ABSTRACT_TIMEKEEPER}
             >
-              <ProjectArticle {...(Compiler.article as any)} />
+              <ProjectArticle
+                {...(Compiler.article as any)}
+                onBackToProjects={() => {
+                  history.push("/#projects");
+                }}
+              />
             </SectionContainer>
+          </Route>
+          <Route path="/">
+            <MainPage
+              onAction={(action) => {
+                document.querySelector("#" + action).scrollIntoView({
+                  behavior: "smooth",
+                });
+              }}
+            />
+            <div id="projects">
+              <ProjectPage
+                onViewProject={({ id }) => {
+                  history.push(id);
+                  window.scrollTo({ top: 0 });
+                }}
+              />
+            </div>
+            <div id="contacts">
+              <ContactMe />
+            </div>
           </Route>
         </Switch>
       </React.Fragment>

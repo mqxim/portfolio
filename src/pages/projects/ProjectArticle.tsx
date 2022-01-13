@@ -29,6 +29,7 @@ interface ImageCarousel extends Block {
 interface ProjectArticleProps {
   heading: string;
   blocks: (Text | ImageCarousel)[];
+  onBackToProjects: () => void;
 }
 
 const ImageCarouselThemeSwitch = (props: {
@@ -45,12 +46,14 @@ const ImageCarouselThemeSwitch = (props: {
         <div style={{ float: "right", marginBottom: 15 }}>
           <ButtonGroup size="small">
             <Button
+              size="small"
               variant={type === "light" ? "contained" : null}
               onClick={() => setType("light")}
             >
               Light
             </Button>
             <Button
+              size="small"
               variant={type === "dark" ? "contained" : null}
               onClick={() => setType("dark")}
             >
@@ -100,7 +103,7 @@ const ImageCarouselThemeSwitch = (props: {
 
 class ProjectArticle extends React.Component<ProjectArticleProps, unknown> {
   render(): JSX.Element {
-    const { heading, blocks } = this.props;
+    const { heading, blocks, onBackToProjects } = this.props;
 
     return (
       <React.Fragment>
@@ -182,7 +185,7 @@ class ProjectArticle extends React.Component<ProjectArticleProps, unknown> {
               }
             })}
             <Grid item xs={12}>
-              <BulkButton text="Назад" />
+              <BulkButton text="Назад" onClick={() => onBackToProjects()} />
             </Grid>
           </Grid>
         </div>

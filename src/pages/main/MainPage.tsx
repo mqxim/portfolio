@@ -5,32 +5,17 @@ import SectionContainer, {
 import ParticlesSystem from "./particle-system/ParticlesSystem";
 import "./MainPage.scss";
 
-interface MainPageState {
-  isLoading: boolean;
+interface MainPageProps {
+  onAction: (v: "about-me" | "projects" | "contacts") => void;
 }
 
-class MainPage extends React.Component<unknown, MainPageState> {
-  constructor(props: unknown) {
-    super(props);
-
-    this.state = {
-      isLoading: true,
-    };
-  }
-
-  componentDidMount(): void {
-    setTimeout(() => {
-      this.setState({ isLoading: false });
-    }, 3000);
-  }
-
+class MainPage extends React.Component<MainPageProps, unknown> {
   render(): JSX.Element {
-    const { isLoading } = this.state;
+    const { onAction } = this.props;
 
     return (
       <SectionContainer
         backgroundType={BackgroundType.CONFETTI}
-        isLoading={isLoading}
         style={{
           height: "100%",
           display: "flex",
@@ -45,17 +30,35 @@ class MainPage extends React.Component<unknown, MainPageState> {
             <h1 className="main-page-my-name">Максим Ильин</h1>
             <div className="main-page-buttons">
               <div>
-                <button className="main-page-button" role="button">
+                <button
+                  className="main-page-button"
+                  role="button"
+                  onClick={() => {
+                    onAction("contacts");
+                  }}
+                >
                   Контакты
                 </button>
               </div>
               <div>
-                <button className="main-page-button" role="button">
+                <button
+                  className="main-page-button"
+                  role="button"
+                  onClick={() => {
+                    onAction("projects");
+                  }}
+                >
                   Мои&nbsp;Проекты
                 </button>
               </div>
               <div>
-                <button className="main-page-button" role="button">
+                <button
+                  className="main-page-button"
+                  role="button"
+                  onClick={() => {
+                    onAction("about-me");
+                  }}
+                >
                   Обо&nbsp;мне
                 </button>
               </div>
