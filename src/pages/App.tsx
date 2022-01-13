@@ -1,20 +1,18 @@
 import * as React from "react";
 import { hot } from "react-hot-loader";
 import { Route, Switch, withRouter } from "react-router-dom";
+import SectionContainer, {
+  BackgroundType,
+} from "@common/components/section-container/SectionContainer";
 import MainPage from "./main/MainPage";
 import ProjectPage from "./projects/ProjectPage";
 import ContactMe from "./contact-me/ContactMe";
-import "./App.scss";
 import Compiler from "../model/projects/compiler/Compiler";
 import Slides from "../model/projects/slides/Slides";
 import AJPerformance from "../model/projects/app-testing/AJPerformance";
 import MoneyCare from "../model/projects/money-care/MoneyCare";
-import SectionContainer, {
-  BackgroundType,
-} from "@common/components/section-container/SectionContainer";
 import ProjectArticle from "./projects/ProjectArticle";
-
-const Projects: { id }[] = [Compiler, Slides, AJPerformance, MoneyCare];
+import "./App.scss";
 
 class App extends React.Component<Record<string, any>, unknown> {
   componentDidUpdate() {
