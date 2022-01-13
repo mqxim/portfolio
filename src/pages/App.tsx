@@ -29,11 +29,19 @@ class App extends React.Component<Record<string, any>, unknown> {
       <React.Fragment>
         <Switch>
           <Route path={"/" + Compiler.id}>
-            <SectionContainer
-              backgroundType={BackgroundType.ABSTRACT_TIMEKEEPER}
-            >
+            <SectionContainer backgroundType={BackgroundType.CONSTELLATION}>
               <ProjectArticle
                 {...(Compiler.article as any)}
+                onBackToProjects={() => {
+                  history.push("/#projects");
+                }}
+              />
+            </SectionContainer>
+          </Route>
+          <Route path={"/" + Slides.id}>
+            <SectionContainer backgroundType={BackgroundType.ABSTRACT_WAVES}>
+              <ProjectArticle
+                {...(Slides.article as any)}
                 onBackToProjects={() => {
                   history.push("/#projects");
                 }}
