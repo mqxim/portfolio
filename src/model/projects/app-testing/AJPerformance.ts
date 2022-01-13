@@ -18,6 +18,7 @@ const Light8 = require("./light[8].png");
 const Light9 = require("./light[9].png");
 
 export default {
+  id: "performance-testing",
   name: "AJ Performance / Тестирование веб-приложений",
   description:
     "Сервис для тестирования производительности, качества и мониторинга ошибок веб-приложений",

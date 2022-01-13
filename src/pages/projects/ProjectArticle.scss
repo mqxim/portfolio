@@ -1,0 +1,11 @@
+.project-article {
+  &-heading {
+    font-family: "Courier New", sans-serif !important;
+  }
+
+  &-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 20px;
+  }
+}

@@ -7,10 +7,11 @@ const Image6 = require("./6.png");
 const Image7 = require("./7.png");
 
 export default {
-  name: "Money Care / Учёт доходов и расходов",
+  id: "slides",
+  name: "Slides Editor / Редактор презентаций",
   description:
-    "Сервис учета доходов и расходов. Позволяет систематизировать ваши траты и анализировать их.",
-  url: "https://mqxim.github.io/money-care/",
+    "Редактор презентаций с возможностью добавления картинок, текстов, фигур.",
+  url: "https://mqxim.github.io/slides/",
   images: {
     dark: [],
     light: [

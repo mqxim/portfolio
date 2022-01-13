@@ -5,27 +5,20 @@ import SectionContainer, {
 import BlockContainer from "@common/components/block-container/BlockContainer";
 import ProjectCard from "./ProjectCard";
 import { Grid, Typography } from "@mui/material";
-import Compiler from "./compiler/Compiler";
-import Slides from "./slides/Slides";
-import AJPerformance from "./app-testing/AJPerformance";
-import MoneyCare from "./money-care/MoneyCare";
 import "./ProjectPage.scss";
+import projects from "../../model/projects";
 
-interface Project {
-  name: string;
-  description: string;
-  url: string;
-  images: {
-    light: string[];
-    dark: string[];
-  };
+interface ProjectPageProps {
+  onViewProject: ({ id }) => void;
 }
 
-const Projects: Project[] = [Compiler, Slides, AJPerformance, MoneyCare];
-
-class MainPage extends React.Component<unknown, unknown> {
-  constructor(props: unknown) {
+class ProjectPage extends React.Component<ProjectPageProps, unknown> {
+  constructor(props: ProjectPageProps) {
     super(props);
+
+    this.state = {
+      isLoading: true,
+    };
   }
 
   componentDidMount(): void {
@@ -35,6 +28,8 @@ class MainPage extends React.Component<unknown, unknown> {
   }
 
   render(): JSX.Element {
+    const { onViewProject } = this.props;
+
     return (
       <SectionContainer backgroundType={BackgroundType.MOUNTAINS_2}>
         <div className="project-page-project-list">
@@ -61,15 +56,15 @@ class MainPage extends React.Component<unknown, unknown> {
                 </Typography>
               </BlockContainer>
             </Grid>
-            {Projects.map(
-              ({ name, description, images: { light, dark } }, key) => (
+            {projects.map(
+              ({ id, name, description, images: { light, dark } }, key) => (
                 <Grid key={key} item xs={12} sm={6} xl={6}>
                   <ProjectCard
                     name={name}
                     description={description}
                     images={dark.length > 0 ? dark : light}
                     onOpen={() => {
-                      console.log("");
+                      onViewProject({ id });
                     }}
                   />
                 </Grid>
@@ -82,4 +77,4 @@ class MainPage extends React.Component<unknown, unknown> {
   }
 }
 
-export default MainPage;
+export default ProjectPage;
