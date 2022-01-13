@@ -4,7 +4,6 @@ import SectionContainer, {
 } from "@common/components/section-container/SectionContainer";
 import ParticlesSystem from "./particle-system/ParticlesSystem";
 import "./MainPage.scss";
-import { Button } from "@mui/material";
 
 interface MainPageState {
   isLoading: boolean;

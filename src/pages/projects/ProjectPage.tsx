@@ -2,13 +2,14 @@ import * as React from "react";
 import SectionContainer, {
   BackgroundType,
 } from "@common/components/section-container/SectionContainer";
-import ProjectCard from "./project-card/ProjectCard";
+import BlockContainer from "@common/components/block-container/BlockContainer";
+import ProjectCard from "./ProjectCard";
 import { Grid, Typography } from "@mui/material";
 import Compiler from "./compiler/Compiler";
 import Slides from "./slides/Slides";
-
-import "./ProjectPage.scss";
 import AJPerformance from "./app-testing/AJPerformance";
+import MoneyCare from "./money-care/MoneyCare";
+import "./ProjectPage.scss";
 
 interface Project {
   name: string;
@@ -20,7 +21,7 @@ interface Project {
   };
 }
 
-const Projects: Project[] = [Compiler, Slides, AJPerformance];
+const Projects: Project[] = [Compiler, Slides, AJPerformance, MoneyCare];
 
 class MainPage extends React.Component<unknown, unknown> {
   constructor(props: unknown) {
@@ -44,30 +45,32 @@ class MainPage extends React.Component<unknown, unknown> {
             spacing={3}
           >
             <Grid item xs={12}>
-              <div>
-                <Typography variant="h2" gutterBottom component="div">
+              <BlockContainer
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "0 25px",
+                }}
+              >
+                <Typography
+                  variant="h2"
+                  component="div"
+                  className="project-page-heading"
+                >
                   Мои проекты
                 </Typography>
-              </div>
+              </BlockContainer>
             </Grid>
             {Projects.map(
-              ({ name, description, images: { light, dark }, url }, key) => (
-                <Grid key={key} item xs={12} sm={6} xl={4}>
+              ({ name, description, images: { light, dark } }, key) => (
+                <Grid key={key} item xs={12} sm={6} xl={6}>
                   <ProjectCard
                     name={name}
                     description={description}
-                    imageSrc={
-                      dark.length > 0
-                        ? dark[0]
-                        : light.length > 0
-                        ? light[0]
-                        : null
-                    }
-                    redirectDisabled={!!!url}
+                    images={dark.length > 0 ? dark : light}
                     onOpen={() => {
                       console.log("");
                     }}
-                    onRedirect={() => window.open(url, "_blank").focus()}
                   />
                 </Grid>
               ),

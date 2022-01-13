@@ -23,7 +23,7 @@ export const ParticlesSystem = (): JSX.Element => {
             value: 5,
             density: {
               enable: true,
-              value_area: 800,
+              value_area: 400,
             },
           },
           line_linked: {
