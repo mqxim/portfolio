@@ -21,7 +21,7 @@ class ProjectPage extends React.Component<ProjectPageProps, unknown> {
     const { onViewProject } = this.props;
 
     return (
-      <SectionContainer backgroundType={BackgroundType.MOUNTAINS_2}>
+      <SectionContainer backgroundType={BackgroundType.CONFETTI}>
         <div className="project-page-project-list">
           <Grid
             container

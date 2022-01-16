@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Button, ButtonGroup, Grid, Typography } from "@mui/material";
 import BlockContainer from "@common/components/block-container/BlockContainer";
-import "./ProjectArticle.scss";
 import BulkButton from "@common/components/button/BulkButton";
 import { Carousel } from "antd";
 import { useState } from "react";
+import "./ProjectArticle.scss";
 
 enum BlockType {
   TEXT = "text",

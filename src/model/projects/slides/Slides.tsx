@@ -62,6 +62,18 @@ export default {
         ],
         dark: [],
       },
+      {
+        type: "text",
+        heading: "Интерактивная версия",
+        text: (
+          <div style={{ width: "100%", height: "800px" }}>
+            <iframe
+              style={{ width: "100%", height: "100%", border: "none" }}
+              src="https://mqxim.github.io/slides/"
+            />
+          </div>
+        ),
+      },
     ],
   },
 };

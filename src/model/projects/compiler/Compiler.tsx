@@ -56,6 +56,18 @@ export default {
         light: [Light1.default, Light2.default, Light3.default],
         dark: [Dark1.default, Dark2.default, Dark3.default],
       },
+      {
+        type: "text",
+        heading: "Интерактивная версия",
+        text: (
+          <div style={{ width: "100%", height: "1000px" }}>
+            <iframe
+              style={{ width: "100%", height: "100%", border: "none" }}
+              src="https://mqxim.github.io/compiler/"
+            />
+          </div>
+        ),
+      },
     ],
   },
 };
