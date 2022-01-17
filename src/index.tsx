@@ -7,7 +7,7 @@ import App from "./pages/App";
 const rootEl = document.getElementById("root");
 
 render(
-  <BrowserRouter>
+  <BrowserRouter basename="/portfolio">
     <App />
   </BrowserRouter>,
   rootEl,
