@@ -1,7 +1,4 @@
 import * as React from "react";
-import SectionContainer, {
-  BackgroundType,
-} from "@common/components/section-container/SectionContainer";
 import ParticlesSystem from "./particle-system/ParticlesSystem";
 import "./MainPage.scss";
 
@@ -14,10 +11,10 @@ class MainPage extends React.Component<MainPageProps, unknown> {
     const { onAction } = this.props;
 
     return (
-      <SectionContainer
-        backgroundType={BackgroundType.CONFETTI}
+      <div
         style={{
           height: "100%",
+          width: "100%",
           display: "flex",
           alignItems: "center",
         }}
@@ -65,7 +62,7 @@ class MainPage extends React.Component<MainPageProps, unknown> {
             </div>
           </div>
         </div>
-      </SectionContainer>
+      </div>
     );
   }
 }

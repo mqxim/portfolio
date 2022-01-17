@@ -33,7 +33,7 @@ class SectionContainer extends React.Component<SectionProps, unknown> {
       <React.Fragment>
         <div
           className={`section-container ${backgroundType} ${
-            isLoading ? "" : "loaded"
+            isLoading ? "loading" : "loaded"
           }`}
           style={style}
         >

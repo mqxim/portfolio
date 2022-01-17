@@ -64,7 +64,11 @@ const ImageCarouselThemeSwitch = (props: {
       )}
       <div style={{ clear: "both" }} />
       {type === "light" && (
-        <Carousel>
+        <Carousel
+          dots={{
+            className: "black-dots",
+          }}
+        >
           {light.map((i, k) => (
             <div key={k}>
               <img
@@ -126,6 +130,7 @@ class ProjectArticle extends React.Component<ProjectArticleProps, unknown> {
                   variant="h4"
                   component="div"
                   className="project-article-heading"
+                  fontWeight="bold"
                 >
                   {heading}
                 </Typography>

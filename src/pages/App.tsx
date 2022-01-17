@@ -11,7 +11,7 @@ import Compiler from "../model/projects/compiler/Compiler";
 import Slides from "../model/projects/slides/Slides";
 import AJPerformance from "../model/projects/app-testing/AJPerformance";
 import MoneyCare from "../model/projects/money-care/MoneyCare";
-import ProjectArticle from "./projects/ProjectArticle";
+import ProjectArticle from "./projects/project-article/ProjectArticle";
 import "./App.scss";
 
 class App extends React.Component<Record<string, any>, unknown> {
@@ -26,7 +26,7 @@ class App extends React.Component<Record<string, any>, unknown> {
     const { history } = this.props;
 
     return (
-      <React.Fragment>
+      <SectionContainer isLoading={false}>
         <Switch>
           <Route path={"/" + Compiler.id}>
             <SectionContainer backgroundType={BackgroundType.CONSTELLATION}>
@@ -48,28 +48,62 @@ class App extends React.Component<Record<string, any>, unknown> {
               />
             </SectionContainer>
           </Route>
-          <Route path="/">
-            <MainPage
-              onAction={(action) => {
-                document.querySelector("#" + action).scrollIntoView({
-                  behavior: "smooth",
-                });
-              }}
-            />
-            <div id="projects">
-              <ProjectPage
-                onViewProject={({ id }) => {
-                  history.push(id);
-                  window.scrollTo({ top: 0 });
+          <Route path={"/" + MoneyCare.id}>
+            <SectionContainer backgroundType={BackgroundType.MOUNTAINS}>
+              <ProjectArticle
+                {...(MoneyCare.article as any)}
+                onBackToProjects={() => {
+                  history.push("/#projects");
                 }}
               />
-            </div>
+            </SectionContainer>
+          </Route>
+          <Route path={"/" + AJPerformance.id}>
+            <SectionContainer backgroundType={BackgroundType.ZIG_ZAG}>
+              <ProjectArticle
+                {...(AJPerformance.article as any)}
+                onBackToProjects={() => {
+                  history.push("/#projects");
+                }}
+              />
+            </SectionContainer>
+          </Route>
+          <Route path="/">
+            <SectionContainer
+              backgroundType={BackgroundType.CONFETTI}
+              style={{
+                display: "flex",
+                alignItems: "center",
+              }}
+            >
+              <MainPage
+                onAction={(action) => {
+                  document.querySelector("#" + action).scrollIntoView({
+                    behavior: "smooth",
+                  });
+                }}
+              />
+            </SectionContainer>
+            <SectionContainer backgroundType={BackgroundType.CONFETTI}>
+              <div id="projects">
+                <ProjectPage
+                  onViewProject={({ id }) => {
+                    history.push(id);
+                    window.scrollTo({ top: 0 });
+                  }}
+                />
+              </div>
+            </SectionContainer>
             <div id="contacts">
-              <ContactMe />
+              <SectionContainer
+                backgroundType={BackgroundType.ABSTRACT_TIMEKEEPER}
+              >
+                <ContactMe />
+              </SectionContainer>
             </div>
           </Route>
         </Switch>
-      </React.Fragment>
+      </SectionContainer>
     );
   }
 }

@@ -60,7 +60,7 @@ export default {
         type: "text",
         heading: "Интерактивная версия",
         text: (
-          <div style={{ width: "100%", height: "1000px" }}>
+          <div style={{ width: "100%", height: "90vh" }}>
             <iframe
               style={{ width: "100%", height: "100%", border: "none" }}
               src="https://mqxim.github.io/compiler/"
