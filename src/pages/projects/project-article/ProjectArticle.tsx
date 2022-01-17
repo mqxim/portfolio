@@ -65,6 +65,7 @@ const ImageCarouselThemeSwitch = (props: {
       <div style={{ clear: "both" }} />
       {type === "light" && (
         <Carousel
+          lazyLoad="ondemand"
           dots={{
             className: "black-dots",
           }}
@@ -85,7 +86,7 @@ const ImageCarouselThemeSwitch = (props: {
         </Carousel>
       )}
       {type == "dark" && (
-        <Carousel>
+        <Carousel lazyLoad="ondemand">
           {dark.map((i, k) => (
             <div key={k}>
               <img

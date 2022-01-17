@@ -38,7 +38,7 @@ export default {
               Проект &quot;Money Care&quot; дает вам возможность записывать
               доходы и расходы, чтобы в дальнейшем анализировать и
               оптимизировать их. Приложение позволяет создавать раздельные счета
-              с разными валютами, просмотривать тразнакции за разные периоды
+              с разными валютами, просматривать транзакции за разные периоды
               времени, сортировать их по значимости.
             </div>
             <div style={{ marginBottom: 8 }}>
@@ -53,9 +53,9 @@ export default {
         type: "image_carousel",
         heading: "Фотографии проекта",
         light: [
-          Image3.default,
           Image1.default,
           Image2.default,
+          Image3.default,
           Image4.default,
           Image5.default,
           Image6.default,

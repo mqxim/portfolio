@@ -35,7 +35,7 @@ const ProjectCard = ({
           }}
         >
           <div style={{ paddingBottom: 30 }}>
-            <Carousel>
+            <Carousel lazyLoad="ondemand">
               {images.map((src) => (
                 <CardMedia
                   key={src}

@@ -1,0 +1,21 @@
+.about-me {
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px;
+
+  &-heading {
+    font-family: "Courier New", sans-serif !important;
+  }
+}
+
+.skills-list {
+  &-item {
+    font-size: 24px !important;
+    margin-bottom: 8px;
+    display: flex;
+
+    &-bullet {
+      min-width: 2.5em;
+    }
+  }
+}

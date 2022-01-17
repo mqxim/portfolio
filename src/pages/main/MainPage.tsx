@@ -31,17 +31,6 @@ class MainPage extends React.Component<MainPageProps, unknown> {
                   className="main-page-button"
                   role="button"
                   onClick={() => {
-                    onAction("contacts");
-                  }}
-                >
-                  Контакты
-                </button>
-              </div>
-              <div>
-                <button
-                  className="main-page-button"
-                  role="button"
-                  onClick={() => {
                     onAction("projects");
                   }}
                 >

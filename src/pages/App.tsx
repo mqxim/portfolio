@@ -1,23 +1,26 @@
 import * as React from "react";
 import { hot } from "react-hot-loader";
-import { Route, Switch, withRouter } from "react-router-dom";
+import { Route, Switch, withRouter, History } from "react-router-dom";
 import SectionContainer, {
   BackgroundType,
 } from "@common/components/section-container/SectionContainer";
 import MainPage from "./main/MainPage";
 import ProjectPage from "./projects/ProjectPage";
-import ContactMe from "./contact-me/ContactMe";
 import Compiler from "../model/projects/compiler/Compiler";
 import Slides from "../model/projects/slides/Slides";
 import AJPerformance from "../model/projects/app-testing/AJPerformance";
 import MoneyCare from "../model/projects/money-care/MoneyCare";
 import ProjectArticle from "./projects/project-article/ProjectArticle";
 import "./App.scss";
+import AboutMe from "./about-me/AboutMe";
 
-class App extends React.Component<Record<string, any>, unknown> {
+interface AppProps {
+  history: History;
+}
+
+class App extends React.Component<AppProps, unknown> {
   componentDidUpdate() {
     if (window.location.hash) {
-      console.log(window.location.hash);
       document.querySelector(window.location.hash).scrollIntoView();
     }
   }
@@ -85,6 +88,11 @@ class App extends React.Component<Record<string, any>, unknown> {
               />
             </SectionContainer>
             <SectionContainer backgroundType={BackgroundType.CONFETTI}>
+              <div id="about-me">
+                <AboutMe />
+              </div>
+            </SectionContainer>
+            <SectionContainer backgroundType={BackgroundType.CONFETTI}>
               <div id="projects">
                 <ProjectPage
                   onViewProject={({ id }) => {
@@ -94,13 +102,6 @@ class App extends React.Component<Record<string, any>, unknown> {
                 />
               </div>
             </SectionContainer>
-            <div id="contacts">
-              <SectionContainer
-                backgroundType={BackgroundType.ABSTRACT_TIMEKEEPER}
-              >
-                <ContactMe />
-              </SectionContainer>
-            </div>
           </Route>
         </Switch>
       </SectionContainer>
@@ -108,6 +109,6 @@ class App extends React.Component<Record<string, any>, unknown> {
   }
 }
 
-declare let module: Record<string, unknown>;
+declare let module: AppProps;
 
 export default hot(module)(withRouter(App));
