@@ -34,7 +34,12 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin({ template: "index.html.ejs" })],
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: "index.html.ejs",
+      favicon: "./assets/favicon/favicon.ico",
+    }),
+  ],
   externals: {
     react: "React",
     "react-dom": "ReactDOM",
